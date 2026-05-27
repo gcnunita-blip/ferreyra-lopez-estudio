@@ -1,10 +1,7 @@
 'use strict';
 
 const LegalApp = {
-    // Variable para memorizar la ventana que se encuentra activa
-    currentCategory: null,
-
-    // Contenido de las guías para cada categoría (incluyendo Instagram)
+    // Contenido de las guías para cada categoría
     guides: {
         'accidente-transito': {
             title: 'Accidente de Tránsito',
@@ -205,24 +202,12 @@ const LegalApp = {
                     <li>Documentos de los bienes (escrituras, certificados, etc.)</li>
                 </ul>
             `
-        },
-        'instagram': {
-            title: 'Nuestro Feed de Instagram',
-            content: `
-                <div style="width: 100%; height: 400px; overflow-y: auto; border-radius: 8px; background: #f9f9f9; text-align: center;">
-                    <iframe src="https://www.instagram.com/p/DY0s4bIG0qc/embed" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:100%;"></iframe>
-                </div>
-                
-                <div style="text-align: center; margin-top: 15px;">
-                    <a href="https://www.instagram.com/matiasferreyralopez/" target="_blank" rel="noopener noreferrer" style="color: #c13584; font-weight: bold; text-decoration: none; font-size: 14px;">
-                        <i class="fab fa-instagram"></i> Abrir aplicación de Instagram
-                    </a>
-                </div>
-            `
         }
     },
 
     init: function() {
+        // Aseguramos un estado limpio al cargar, eliminando cualquier clase "active"
+        // y limpiando estilos en línea que pudieran haber quedado.
         const modal = document.getElementById('modal');
         const modalOverlay = document.getElementById('modalOverlay');
         
@@ -237,7 +222,6 @@ const LegalApp = {
 
         this.setupCategoryCards();
         this.setupModal();
-        this.setupSocialButtons(); 
         this.preventPinchZoom();
         this.optimizeForTouchDevices();
     },
@@ -248,7 +232,7 @@ const LegalApp = {
             card.addEventListener('click', (e) => this.handleCardClick(e));
             card.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
+                    e.preventDefault(); // Evita scroll con barra espaciadora
                     this.handleCardClick(e);
                 }
             });
@@ -263,20 +247,7 @@ const LegalApp = {
         this.openModal(category);
     },
 
-    setupSocialButtons: function() {
-        const instagramBtn = document.querySelector('.social-icon.instagram');
-        if (instagramBtn) {
-            instagramBtn.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                this.openModal('instagram'); 
-            });
-        }
-    },
-
     openModal: function(category) {
-        // Guardamos la categoría actual para usarla en el mensaje de WhatsApp
-        this.currentCategory = category;
-
         const guide = this.guides[category];
         if (!guide) return;
 
@@ -284,23 +255,15 @@ const LegalApp = {
         const modalOverlay = document.getElementById('modalOverlay');
         const modalTitle = document.getElementById('modalTitle');
         const modalContent = document.getElementById('modalContent');
-        
-        // Seleccionamos el contenedor del botón de contacto
-        const modalFooter = document.querySelector('.modal-footer'); 
 
         modalTitle.textContent = guide.title;
         modalContent.innerHTML = guide.content;
 
-        // Ocultamos el botón de contacto SÓLO si es la ventana de Instagram
-        if (category === 'instagram') {
-            modalFooter.style.display = 'none';
-        } else {
-            modalFooter.style.display = 'block'; // Lo mostramos para el resto de categorías
-        }
-
+        // Utilizamos solo las clases CSS para mostrar el modal
         modal.classList.add('active');
         modalOverlay.classList.add('active');
 
+        // Prevenir scroll del body
         document.body.style.overflow = 'hidden';
     },
 
@@ -308,13 +271,12 @@ const LegalApp = {
         const modal = document.getElementById('modal');
         const modalOverlay = document.getElementById('modalOverlay');
 
+        // Retiramos las clases CSS para ocultarlo
         modal.classList.remove('active');
         modalOverlay.classList.remove('active');
 
+        // Restaurar scroll del body
         document.body.style.overflow = '';
-        
-        // Limpiamos la categoría al cerrar la ventana
-        this.currentCategory = null;
     },
 
     setupModal: function() {
@@ -322,7 +284,9 @@ const LegalApp = {
         const modalClose = document.getElementById('modalClose');
         const modalOverlay = document.getElementById('modalOverlay');
         const contactBtn = document.querySelector('.btn-contact');
+        const modal = document.getElementById('modal');
 
+        // Click en el botón X
         if (modalClose) {
             modalClose.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -330,14 +294,17 @@ const LegalApp = {
             });
         }
 
+        // Click en el overlay (fondo oscuro)
         if (modalOverlay) {
             modalOverlay.addEventListener('click', function(e) {
+                // Cerramos solo si el click es exactamente en el fondo, no dentro de la ventana
                 if (e.target === modalOverlay) {
                     self.closeModal();
                 }
             });
         }
 
+        // Click en el botón de contacto
         if (contactBtn) {
             contactBtn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -345,6 +312,7 @@ const LegalApp = {
             });
         }
 
+        // Tecla ESC para cerrar
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 self.closeModal();
@@ -353,39 +321,8 @@ const LegalApp = {
     },
 
     handleContact: function() {
-        // Reemplaza por tu número real manteniendo el código de país y de área sin símbolos
-        const numeroWhatsApp = "5493510000000"; 
-        
-        // Mensaje base de respaldo
-        let mensaje = "Hola, me comunico desde la página web del estudio. Me gustaría hacer una consulta.";
-        
-        // Personalización inteligente del mensaje según la ventana activa
-        switch (this.currentCategory) {
-            case 'accidente-transito':
-                mensaje = "Hola. Me comunico desde su web. Sufrí un accidente de tránsito y necesito asesoramiento legal para reclamar.";
-                break;
-            case 'accidente-laboral':
-                mensaje = "Hola. Me comunico desde su web. Sufrí un accidente de trabajo (o tengo un problema con la ART) y necesito asesorarme sobre mis derechos.";
-                break;
-            case 'despido-laboral':
-                mensaje = "Hola. Fui despedido/a recientemente y me gustaría que revisen mi caso y liquidación.";
-                break;
-            case 'cuota-alimentaria':
-                mensaje = "Hola. Necesito hacerles una consulta relacionada con un tema de cuota alimentaria.";
-                break;
-            case 'cumplimiento-contrato':
-                mensaje = "Hola. Me comunico por un problema de incumplimiento de contrato y necesito saber mis opciones legales.";
-                break;
-            case 'sucesiones':
-                mensaje = "Hola. Me comunico desde su web para hacer una consulta sobre un trámite de sucesión/herencia.";
-                break;
-            case 'instagram':
-                mensaje = "Hola, vi su perfil de Instagram desde la web y me gustaría hacerles una consulta legal.";
-                break;
-        }
-        
-        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
+        console.log('Contactar al estudio');
+        // Aquí irá la funcionalidad de contacto
     },
 
     preventPinchZoom: function() {
@@ -409,17 +346,20 @@ const LegalApp = {
     }
 };
 
+// Inicializar cuando el DOM esté listo
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => LegalApp.init());
 } else {
     LegalApp.init();
 }
 
+// Detectar si es iOS
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if (isIOS) {
     document.body.classList.add('is-ios');
 }
 
+// Detectar si es Android
 const isAndroid = /Android/.test(navigator.userAgent);
 if (isAndroid) {
     document.body.classList.add('is-android');

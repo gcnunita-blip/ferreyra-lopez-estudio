@@ -5,18 +5,15 @@
 }
 
 html {
-    height: 100%;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     user-select: none;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Arial', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, #001a4d 0%, #003d99 50%, #001a4d 100%);
     background-attachment: fixed;
-    min-height: 100vh;
-    min-height: 100dvh;
     color: #ffffff;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
@@ -24,6 +21,37 @@ body {
     padding-top: max(0px, env(safe-area-inset-top));
     padding-bottom: max(0px, env(safe-area-inset-bottom));
 }
+
+/* ==========================================================================
+   CONTROL DE SCROLL SEGÚN EL DISPOSITIVO
+   ========================================================================== */
+
+/* 1. Para Computadoras (Pantallas grandes): Fijamos todo para que no se mueva */
+@media (min-width: 1025px) {
+    html, body {
+        height: 100%;
+        overflow: hidden; /* Bloquea el scroll en PC */
+    }
+}
+
+/* 2. Para Celulares y Tablets: Liberamos el scroll nativo táctil */
+@media (max-width: 1024px) {
+    html {
+        height: auto;
+        overflow: visible; /* Libera el motor táctil de la raíz */
+    }
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden; /* Evita que la web se mueva hacia los costados */
+        overflow-y: visible; /* Permite deslizar hacia abajo con el dedo */
+        background-attachment: scroll; /* Soluciona el bug de iOS/Android que congela la pantalla */
+    }
+}
+
+/* ==========================================================================
+   RESTO DE ESTILOS (HEADER, CARDS, MODAL, ETC.)
+   ========================================================================== */
 
 /* Header */
 .header {
@@ -46,18 +74,21 @@ body {
 }
 
 .header-title {
-    font-size: 48px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 46px; 
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     margin-bottom: 8px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .header-subtitle {
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
     color: #b0c4de;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
@@ -177,7 +208,7 @@ body {
 }
 
 .modal {
-    display: none;
+    display: none; 
     position: fixed;
     top: 50%;
     left: 50%;
@@ -191,12 +222,11 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
     overflow: hidden;
-    display: flex;
     flex-direction: column;
 }
 
 .modal.active {
-    display: flex;
+    display: flex; 
 }
 
 .modal-header {
@@ -205,6 +235,9 @@ body {
     padding: 20px;
     position: relative;
     padding-right: 50px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    margin: 0;
 }
 
 .modal-header h2 {
