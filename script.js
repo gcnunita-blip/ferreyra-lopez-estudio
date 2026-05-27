@@ -1,1 +1,357 @@
-'use strict';\n\nconst LegalApp = {\n    guides: {\n        'accidente-transito': {\n            title: 'Accidente de Tránsito',\n            content: `\n                <h3>¿Qué hacer después de un accidente de tránsito?</h3>\n                <p>Si has sufrido un accidente vehicular, es importante actuar rápidamente. Aquí te brindamos una guía para proteger tus derechos:</p>\n                \n                <h3>Pasos inmediatos:</h3>\n                <ul>\n                    <li><strong>Seguridad primero:</strong> Verifica que todos estén seguros. Si hay lesionados, llama a emergencias.</li>\n                    <li><strong>Llamar a la policía:</strong> Reporta el accidente y obtén el número de denuncia.</li>\n                    <li><strong>Documentación:</strong> Recolecta nombres, teléfonos e información de seguros de todos los involucrados.</li>\n                    <li><strong>Fotos:</strong> Documenta el estado de los vehículos y la escena del accidente.</li>\n                    <li><strong>Testigos:</strong> Identifica y registra datos de personas que presenciaron el accidente.</li>\n                </ul>\n                \n                <h3>Después del accidente:</h3>\n                <ul>\n                    <li>Notifica a tu aseguradora dentro de los plazos establecidos.</li>\n                    <li>Solicita un informe médico si sufriste lesiones.</li>\n                    <li>Conserva todos los documentos (recibos, facturas de reparaciones, etc.).</li>\n                    <li>Consulta con un abogado para reclamar daños y perjuicios si corresponde.</li>\n                </ul>\n                \n                <h3>Reclamaciones:</h3>\n                <p>Tienes derecho a reclamar por:</p>\n                <ul>\n                    <li>Daños al vehículo</li>\n                    <li>Lesiones personales</li>\n                    <li>Pérdida de ingresos por incapacidad</li>\n                    <li>Gastos médicos y de rehabilitación</li>\n                </ul>\n            `\n        },\n        'accidente-laboral': {\n            title: 'Accidente Laboral',\n            content: `\n                <h3>¿Sufriste un accidente en el trabajo?</h3>\n                <p>Los accidentes laborales están cubiertos por la legislación de riesgos del trabajo. Conoce tus derechos:</p>\n                \n                <h3>Debes hacer lo siguiente:</h3>\n                <ul>\n                    <li><strong>Informar inmediatamente:</strong> Comunica al empleador sobre el accidente.</li>\n                    <li><strong>Registro:</strong> Solicita que se documenten los detalles del accidente.</li>\n                    <li><strong>Atención médica:</strong> Acude a un médico y conserva los comprobantes.</li>\n                    <li><strong>Documentación:</strong> Obtén una copia del acta del accidente.</li>\n                    <li><strong>Testigos:</strong> Identifica compañeros que presenciaron el hecho.</li>\n                </ul>\n                \n                <h3>Tus derechos:</h3>\n                <ul>\n                    <li>Cobertura médica completa</li>\n                    <li>Rehabilitación y recuperación</li>\n                    <li>Subsidio por incapacidad temporal</li>\n                    <li>Indemnización si hay consecuencias permanentes</li>\n                    <li>Protección contra despidos discriminatorios</li>\n                </ul>\n                \n                <h3>Próximos pasos:</h3>\n                <p>Contacta a nuestro estudio para tramitar tu reclamo ante la aseguradora y obtener la compensación que mereces.</p>\n            `\n        },\n        'despido-laboral': {\n            title: 'Despido Laboral',\n            content: `\n                <h3>¿Fuiste despedido?</h3>\n                <p>Tienes derechos que protegen tu empleabilidad. Aquí te explicamos cómo proceder:</p>\n                \n                <h3>Primeros pasos:</h3>\n                <ul>\n                    <li><strong>Solicita por escrito:</strong> Pide al empleador que justifique el despido por escrito.</li>\n                    <li><strong>Conserva documentos:</strong> Guarda todas las comunicaciones y comprobantes.</li>\n                    <li><strong>Consulta inmediatamente:</strong> Contacta a un abogado laboralista para asesorarte.</li>\n                </ul>\n                \n                <h3>Tipos de despido:</h3>\n                <ul>\n                    <li><strong>Justificado:</strong> Con causa demostrable (incumplimiento grave, conducta, etc.)</li>\n                    <li><strong>Injustificado:</strong> Sin causa o sin cumplir procedimientos legales</li>\n                    <li><strong>Nulidad:</strong> Por discriminación, represalias o causas vedadas</li>\n                </ul>\n                \n                <h3>Compensaciones a las que tienes derecho:</h3>\n                <ul>\n                    <li>Preaviso (o pago del preaviso)</li>\n                    <li>Indemnización por antigüedad</li>\n                    <li>Indemnización por falta de justa causa</li>\n                    <li>Recuperación del empleo (en casos de nulidad)</li>\n                </ul>\n            `\n        },\n        'cuota-alimentaria': {\n            title: 'Cuota Alimentaria',\n            content: `\n                <h3>Consultas sobre Cuota Alimentaria</h3>\n                <p>La cuota alimentaria garantiza el sustento de hijos menores de edad. Asesoría en todos los aspectos:</p>\n                \n                <h3>¿Quién tiene derecho?</h3>\n                <ul>\n                    <li>Hijos menores de edad</li>\n                    <li>Hijos mayores de edad en ciertos casos (estudiantes, incapaces)</li>\n                    <li>Cónyuge o ex cónyuge en situación de necesidad</li>\n                </ul>\n                \n                <h3>¿Cómo se calcula?</h3>\n                <ul>\n                    <li>Porcentaje de los ingresos del obligado</li>\n                    <li>Cantidad de hijos a cargo</li>\n                    <li>Necesidades del hijo</li>\n                    <li>Capacidad económica de ambos padres</li>\n                </ul>\n                \n                <h3>Trámites:</h3>\n                <ul>\n                    <li><strong>Acuerdo voluntario:</strong> Ambos padres acuerdan la cuota</li>\n                    <li><strong>Demanda judicial:</strong> Si no hay acuerdo, se inicia juicio</li>\n                    <li><strong>Modificación:</strong> Cambios en la cuota por cambios económicos</li>\n                    <li><strong>Cese o aumento:</strong> Según nuevas circunstancias</li>\n                </ul>\n                \n                <h3>Obligaciones del deudor:</h3>\n                <p>Pago puntual y completo de la cuota establecida. El incumplimiento puede resultar en sanciones legales.</p>\n            `\n        },\n        'cumplimiento-contrato': {\n            title: 'Cumplimiento de Contrato',\n            content: `\n                <h3>Incumplimiento de Contrato</h3>\n                <p>¿Existe un incumplimiento contractual? Te asesoramos sobre tus opciones legales:</p>\n                \n                <h3>Antes de litigar:</h3>\n                <ul>\n                    <li>Verifica los términos exactos del contrato.</li>\n                    <li>Documenta toda comunicación con la otra parte.</li>\n                    <li>Notifica formalmente sobre el incumplimiento.</li>\n                    <li>Intenta resolver mediante diálogo.</li>\n                    <li>Considera mediación o arbitraje.</li>\n                </ul>\n                \n                <h3>Opciones legales:</h3>\n                <ul>\n                    <li><strong>Cumplimiento forzado:</strong> Obligar el cumplimiento del contrato</li>\n                    <li><strong>Resolución del contrato:</strong> Darlo por terminado</li>\n                    <li><strong>Indemnización por daños:</strong> Reclamar compensación</li>\n                    <li><strong>Cláusula penal:</strong> Si está estipulada en el contrato</li>\n                </ul>\n                \n                <h3>Documentación necesaria:</h3>\n                <ul>\n                    <li>Copia del contrato firmado</li>\n                    <li>Comunicaciones entre partes</li>\n                    <li>Comprobantes de pago o cumplimiento</li>\n                    <li>Evidencia del incumplimiento</li>\n                </ul>\n                \n                <h3>Plazos de prescripción:</h3>\n                <p>Consulta con nuestro equipo sobre los plazos aplicables a tu caso específico para evitar que prescriba tu derecho.</p>\n            `\n        },\n        'sucesiones': {\n            title: 'Sucesiones y Herencias',\n            content: `\n                <h3>Asesoría en Sucesiones</h3>\n                <p>Gestión integral de procesos sucesorios y trámites de herencias:</p>\n                \n                <h3>¿Qué es una sucesión?</h3>\n                <p>Es el proceso legal de distribución de los bienes de una persona fallecida entre sus herederos.</p>\n                \n                <h3>Tipos de sucesión:</h3>\n                <ul>\n                    <li><strong>Testamentaria:</strong> El fallecido dejó testamento</li>\n                    <li><strong>Intestada:</strong> No hay testamento, sucede por ley</li>\n                    <li><strong>Mixta:</strong> Combinación de ambas</li>\n                </ul>\n                \n                <h3>Pasos en un proceso sucesorio:</h3>\n                <ul>\n                    <li>Presentación de la declaratoria de herederos (si corresponde)</li>\n                    <li>Inventario y tasación de bienes</li>\n                    <li>Pago de deudas y obligaciones</li>\n                    <li>Distribución de la herencia</li>\n                    <li>Transferencia de bienes inmuebles</li>\n                </ul>\n                \n                <h3>Herederos con derecho:</h3>\n                <ul>\n                    <li>Cónyuge</li>\n                    <li>Hijos (legítimos y adoptados)</li>\n                    <li>Padres o ascendientes</li>\n                    <li>Hermanos y colaterales (en ciertos órdenes)</li>\n                </ul>\n                \n                <h3>Documentos necesarios:</h3>\n                <ul>\n                    <li>Certificado de defunción</li>\n                    <li>Testamento (si existe)</li>\n                    <li>Documentos de identificación de herederos</li>\n                    <li>Documentos de los bienes (escrituras, certificados, etc.)</li>\n                </ul>\n            `\n        }\n    },\n\n    modal: null,\n    modalOverlay: null,\n    modalClose: null,\n    modalTitle: null,\n    modalContent: null,\n\n    init: function() {\n        console.log('Inicializando LegalApp...');\n        \n        // Obtener referencias a elementos\n        this.modal = document.getElementById('modal');\n        this.modalOverlay = document.getElementById('modalOverlay');\n        this.modalClose = document.getElementById('modalClose');\n        this.modalTitle = document.getElementById('modalTitle');\n        this.modalContent = document.getElementById('modalContent');\n\n        // Validar que existan los elementos\n        if (!this.modal || !this.modalOverlay) {\n            console.error('Modal elements not found');\n            return;\n        }\n\n        this.setupCategoryCards();\n        this.setupModalEvents();\n    },\n\n    setupCategoryCards: function() {\n        const cards = document.querySelectorAll('.category-card');\n        console.log('Encontradas ' + cards.length + ' tarjetas');\n        \n        cards.forEach((card, index) => {\n            card.addEventListener('click', (e) => {\n                console.log('Click en tarjeta ' + index);\n                const category = card.getAttribute('data-category');\n                this.openModal(category);\n            });\n        });\n    },\n\n    openModal: function(category) {\n        console.log('Abriendo modal para: ' + category);\n        \n        const guide = this.guides[category];\n        if (!guide) {\n            console.error('Guía no encontrada para: ' + category);\n            return;\n        }\n\n        this.modalTitle.textContent = guide.title;\n        this.modalContent.innerHTML = guide.content;\n        this.modal.classList.add('active');\n        this.modalOverlay.classList.add('active');\n        document.body.style.overflow = 'hidden';\n        \n        console.log('Modal abierto');\n    },\n\n    closeModal: function() {\n        console.log('Cerrando modal...');\n        this.modal.classList.remove('active');\n        this.modalOverlay.classList.remove('active');\n        document.body.style.overflow = '';\n    },\n\n    setupModalEvents: function() {\n        console.log('Configurando eventos del modal...');\n        \n        // Click en botón X\n        this.modalClose.addEventListener('click', (e) => {\n            e.preventDefault();\n            e.stopPropagation();\n            console.log('Click en X');\n            this.closeModal();\n        });\n\n        // Click en overlay\n        this.modalOverlay.addEventListener('click', (e) => {\n            console.log('Click en overlay');\n            this.closeModal();\n        });\n\n        // Tecla ESC\n        document.addEventListener('keydown', (e) => {\n            if (e.key === 'Escape') {\n                console.log('Presionada tecla ESC');\n                this.closeModal();\n            }\n        });\n    }\n};\n\n// Inicializar\nif (document.readyState === 'loading') {\n    document.addEventListener('DOMContentLoaded', () => {\n        console.log('DOM cargado');\n        LegalApp.init();\n    });\n} else {\n    console.log('DOM ya cargado');\n    LegalApp.init();\n}\n"
+'use strict';
+
+const LegalApp = {
+    // Contenido de las guías para cada categoría
+    guides: {
+        'accidente-transito': {
+            title: 'Accidente de Tránsito',
+            content: `
+                <h3>¿Qué hacer después de un accidente de tránsito?</h3>
+                <p>Si has sufrido un accidente vehicular, es importante actuar rápidamente. Aquí te brindamos una guía para proteger tus derechos:</p>
+                
+                <h3>Pasos inmediatos:</h3>
+                <ul>
+                    <li><strong>Seguridad primero:</strong> Verifica que todos estén seguros. Si hay lesionados, llama a emergencias.</li>
+                    <li><strong>Llamar a la policía:</strong> Reporta el accidente y obtén el número de denuncia.</li>
+                    <li><strong>Documentación:</strong> Recolecta nombres, teléfonos e información de seguros de todos los involucrados.</li>
+                    <li><strong>Fotos:</strong> Documenta el estado de los vehículos y la escena del accidente.</li>
+                    <li><strong>Testigos:</strong> Identifica y registra datos de personas que presenciaron el accidente.</li>
+                </ul>
+                
+                <h3>Después del accidente:</h3>
+                <ul>
+                    <li>Notifica a tu aseguradora dentro de los plazos establecidos.</li>
+                    <li>Solicita un informe médico si sufriste lesiones.</li>
+                    <li>Conserva todos los documentos (recibos, facturas de reparaciones, etc.).</li>
+                    <li>Consulta con un abogado para reclamar daños y perjuicios si corresponde.</li>
+                </ul>
+                
+                <h3>Reclamaciones:</h3>
+                <p>Tienes derecho a reclamar por:</p>
+                <ul>
+                    <li>Daños al vehículo</li>
+                    <li>Lesiones personales</li>
+                    <li>Pérdida de ingresos por incapacidad</li>
+                    <li>Gastos médicos y de rehabilitación</li>
+                </ul>
+            `
+        },
+        'accidente-laboral': {
+            title: 'Accidente Laboral',
+            content: `
+                <h3>¿Sufriste un accidente en el trabajo?</h3>
+                <p>Los accidentes laborales están cubiertos por la legislación de riesgos del trabajo. Conoce tus derechos:</p>
+                
+                <h3>Debes hacer lo siguiente:</h3>
+                <ul>
+                    <li><strong>Informar inmediatamente:</strong> Comunica al empleador sobre el accidente.</li>
+                    <li><strong>Registro:</strong> Solicita que se documenten los detalles del accidente.</li>
+                    <li><strong>Atención médica:</strong> Acude a un médico y conserva los comprobantes.</li>
+                    <li><strong>Documentación:</strong> Obtén una copia del acta del accidente.</li>
+                    <li><strong>Testigos:</strong> Identifica compañeros que presenciaron el hecho.</li>
+                </ul>
+                
+                <h3>Tus derechos:</h3>
+                <ul>
+                    <li>Cobertura médica completa</li>
+                    <li>Rehabilitación y recuperación</li>
+                    <li>Subsidio por incapacidad temporal</li>
+                    <li>Indemnización si hay consecuencias permanentes</li>
+                    <li>Protección contra despidos discriminatorios</li>
+                </ul>
+                
+                <h3>Próximos pasos:</h3>
+                <p>Contacta a nuestro estudio para tramitar tu reclamo ante la aseguradora y obtener la compensación que mereces.</p>
+            `
+        },
+        'despido-laboral': {
+            title: 'Despido Laboral',
+            content: `
+                <h3>¿Fuiste despedido?</h3>
+                <p>Tienes derechos que protegen tu empleabilidad. Aquí te explicamos cómo proceder:</p>
+                
+                <h3>Primeros pasos:</h3>
+                <ul>
+                    <li><strong>Solicita por escrito:</strong> Pide al empleador que justifique el despido por escrito.</li>
+                    <li><strong>Conserva documentos:</strong> Guarda todas las comunicaciones y comprobantes.</li>
+                    <li><strong>Consulta inmediatamente:</strong> Contacta a un abogado laboralista para asesorarte.</li>
+                </ul>
+                
+                <h3>Tipos de despido:</h3>
+                <ul>
+                    <li><strong>Justificado:</strong> Con causa demostrable (incumplimiento grave, conducta, etc.)</li>
+                    <li><strong>Injustificado:</strong> Sin causa o sin cumplir procedimientos legales</li>
+                    <li><strong>Nulidad:</strong> Por discriminación, represalias o causas vedadas</li>
+                </ul>
+                
+                <h3>Compensaciones a las que tienes derecho:</h3>
+                <ul>
+                    <li>Preaviso (o pago del preaviso)</li>
+                    <li>Indemnización por antigüedad</li>
+                    <li>Indemnización por falta de justa causa</li>
+                    <li>Recuperación del empleo (en casos de nulidad)</li>
+                </ul>
+            `
+        },
+        'cuota-alimentaria': {
+            title: 'Cuota Alimentaria',
+            content: `
+                <h3>Consultas sobre Cuota Alimentaria</h3>
+                <p>La cuota alimentaria garantiza el sustento de hijos menores de edad. Asesoría en todos los aspectos:</p>
+                
+                <h3>¿Quién tiene derecho?</h3>
+                <ul>
+                    <li>Hijos menores de edad</li>
+                    <li>Hijos mayores de edad en ciertos casos (estudiantes, incapaces)</li>
+                    <li>Cónyuge o ex cónyuge en situación de necesidad</li>
+                </ul>
+                
+                <h3>¿Cómo se calcula?</h3>
+                <ul>
+                    <li>Porcentaje de los ingresos del obligado</li>
+                    <li>Cantidad de hijos a cargo</li>
+                    <li>Necesidades del hijo</li>
+                    <li>Capacidad económica de ambos padres</li>
+                </ul>
+                
+                <h3>Trámites:</h3>
+                <ul>
+                    <li><strong>Acuerdo voluntario:</strong> Ambos padres acuerdan la cuota</li>
+                    <li><strong>Demanda judicial:</strong> Si no hay acuerdo, se inicia juicio</li>
+                    <li><strong>Modificación:</strong> Cambios en la cuota por cambios económicos</li>
+                    <li><strong>Cese o aumento:</strong> Según nuevas circunstancias</li>
+                </ul>
+                
+                <h3>Obligaciones del deudor:</h3>
+                <p>Pago puntual y completo de la cuota establecida. El incumplimiento puede resultar en sanciones legales.</p>
+            `
+        },
+        'cumplimiento-contrato': {
+            title: 'Cumplimiento de Contrato',
+            content: `
+                <h3>Incumplimiento de Contrato</h3>
+                <p>¿Existe un incumplimiento contractual? Te asesoramos sobre tus opciones legales:</p>
+                
+                <h3>Antes de litigar:</h3>
+                <ul>
+                    <li>Verifica los términos exactos del contrato.</li>
+                    <li>Documenta toda comunicación con la otra parte.</li>
+                    <li>Notifica formalmente sobre el incumplimiento.</li>
+                    <li>Intenta resolver mediante diálogo.</li>
+                    <li>Considera mediación o arbitraje.</li>
+                </ul>
+                
+                <h3>Opciones legales:</h3>
+                <ul>
+                    <li><strong>Cumplimiento forzado:</strong> Obligar el cumplimiento del contrato</li>
+                    <li><strong>Resolución del contrato:</strong> Darlo por terminado</li>
+                    <li><strong>Indemnización por daños:</strong> Reclamar compensación</li>
+                    <li><strong>Cláusula penal:</strong> Si está estipulada en el contrato</li>
+                </ul>
+                
+                <h3>Documentación necesaria:</h3>
+                <ul>
+                    <li>Copia del contrato firmado</li>
+                    <li>Comunicaciones entre partes</li>
+                    <li>Comprobantes de pago o cumplimiento</li>
+                    <li>Evidencia del incumplimiento</li>
+                </ul>
+                
+                <h3>Plazos de prescripción:</h3>
+                <p>Consulta con nuestro equipo sobre los plazos aplicables a tu caso específico para evitar que prescriba tu derecho.</p>
+            `
+        },
+        'sucesiones': {
+            title: 'Sucesiones y Herencias',
+            content: `
+                <h3>Asesoría en Sucesiones</h3>
+                <p>Gestión integral de procesos sucesorios y trámites de herencias:</p>
+                
+                <h3>¿Qué es una sucesión?</h3>
+                <p>Es el proceso legal de distribución de los bienes de una persona fallecida entre sus herederos.</p>
+                
+                <h3>Tipos de sucesión:</h3>
+                <ul>
+                    <li><strong>Testamentaria:</strong> El fallecido dejó testamento</li>
+                    <li><strong>Intestada:</strong> No hay testamento, sucede por ley</li>
+                    <li><strong>Mixta:</strong> Combinación de ambas</li>
+                </ul>
+                
+                <h3>Pasos en un proceso sucesorio:</h3>
+                <ul>
+                    <li>Presentación de la declaratoria de herederos (si corresponde)</li>
+                    <li>Inventario y tasación de bienes</li>
+                    <li>Pago de deudas y obligaciones</li>
+                    <li>Distribución de la herencia</li>
+                    <li>Transferencia de bienes inmuebles</li>
+                </ul>
+                
+                <h3>Herederos con derecho:</h3>
+                <ul>
+                    <li>Cónyuge</li>
+                    <li>Hijos (legítimos y adoptados)</li>
+                    <li>Padres o ascendientes</li>
+                    <li>Hermanos y colaterales (en ciertos órdenes)</li>
+                </ul>
+                
+                <h3>Documentos necesarios:</h3>
+                <ul>
+                    <li>Certificado de defunción</li>
+                    <li>Testamento (si existe)</li>
+                    <li>Documentos de identificación de herederos</li>
+                    <li>Documentos de los bienes (escrituras, certificados, etc.)</li>
+                </ul>
+            `
+        }
+    },
+
+    init: function() {
+        this.setupCategoryCards();
+        this.setupModal();
+        this.preventPinchZoom();
+        this.optimizeForTouchDevices();
+    },
+
+    setupCategoryCards: function() {
+        const cards = document.querySelectorAll('.category-card');
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => this.handleCardClick(e));
+            card.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    this.handleCardClick(e);
+                }
+            });
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+        });
+    },
+
+    handleCardClick: function(e) {
+        const card = e.currentTarget;
+        const category = card.getAttribute('data-category');
+        this.openModal(category);
+    },
+
+    openModal: function(category) {
+        const guide = this.guides[category];
+        if (!guide) return;
+
+        const modal = document.getElementById('modal');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+
+        modalTitle.textContent = guide.title;
+        modalContent.innerHTML = guide.content;
+
+        modal.classList.add('active');
+        modalOverlay.classList.add('active');
+
+        // Prevenir scroll del body
+        document.body.style.overflow = 'hidden';
+    },
+
+    closeModal: function() {
+        const modal = document.getElementById('modal');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        modal.classList.remove('active');
+        modalOverlay.classList.remove('active');
+
+        // Restaurar scroll del body
+        document.body.style.overflow = '';
+    },
+
+    setupModal: function() {
+        const self = this;
+        const modalClose = document.getElementById('modalClose');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const contactBtn = document.querySelector('.btn-contact');
+        const modal = document.getElementById('modal');
+
+        // Click en el botón X
+        if (modalClose) {
+            modalClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                self.closeModal();
+            });
+        }
+
+        // Click en el overlay (fondo oscuro)
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', function(e) {
+                // Solo cerrar si clickeamos en el overlay mismo, no en el modal
+                if (e.target === modalOverlay) {
+                    self.closeModal();
+                }
+            });
+        }
+
+        // Click en el botón de contacto
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                self.handleContact();
+            });
+        }
+
+        // Prevenir que clicks en el modal lo cierren
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Tecla ESC para cerrar
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                self.closeModal();
+            }
+        });
+    },
+
+    handleContact: function() {
+        console.log('Contactar al estudio');
+        // Aquí irá la funcionalidad de contacto
+    },
+
+    preventPinchZoom: function() {
+        document.addEventListener('touchmove', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    },
+
+    optimizeForTouchDevices: function() {
+        const isTouchDevice = () => {
+            return (('ontouchstart' in window) ||
+                    (navigator.maxTouchPoints > 0) ||
+                    (navigator.msMaxTouchPoints > 0));
+        };
+
+        if (isTouchDevice()) {
+            document.body.classList.add('touch-device');
+        }
+    }
+};
+
+// Inicializar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => LegalApp.init());
+} else {
+    LegalApp.init();
+}
+
+// Detectar si es iOS
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (isIOS) {
+    document.body.classList.add('is-ios');
+}
+
+// Detectar si es Android
+const isAndroid = /Android/.test(navigator.userAgent);
+if (isAndroid) {
+    document.body.classList.add('is-android');
+}
