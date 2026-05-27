@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 25%, #0f0f0f 50%, #2c2c2c 75%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 40%, #1a1a1a 100%);
     background-attachment: fixed;
     color: #ffffff;
     -webkit-font-smoothing: antialiased;
@@ -77,11 +77,14 @@ body {
     font-family: 'Libre Baskerville', serif;
     font-size: 46px; 
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin-bottom: 8px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    text-shadow: 
+        0 0 20px rgba(212, 175, 55, 0.6),
+        0 4px 15px rgba(0, 0, 0, 0.7);
     animation: fadeInUp 0.8s ease-out 0.2s both;
-    color: #d4af37;
+    color: #f0d67f;
+    text-decoration: none;
 }
 
 .header-subtitle {
@@ -370,9 +373,8 @@ body {
 }
 
 .social-icon.instagram {
-    background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
-    color: #1a1a1a;
-    font-weight: 700;
+    background-color: #e1306c;
+    color: #ffffff;
 }
 
 .social-icon.instagram:active {
@@ -381,14 +383,12 @@ body {
 
 .social-icon.instagram:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.5);
 }
 
 .social-icon.whatsapp {
-    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
-    color: #d4af37;
-    font-weight: 700;
-    border: 2px solid #d4af37;
+    background-color: #25d366;
+    color: #ffffff;
 }
 
 .social-icon.whatsapp:active {
@@ -397,7 +397,7 @@ body {
 
 .social-icon.whatsapp:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
 }
 
 /* Branding */
