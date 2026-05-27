@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #001a4d 0%, #003d99 50%, #001a4d 100%);
+    background: linear-gradient(135deg, #1a3a52 0%, #0d47a1 50%, #1a3a52 100%);
     background-attachment: fixed;
     color: #ffffff;
     -webkit-font-smoothing: antialiased;
@@ -68,7 +68,7 @@ body {
 .logo {
     height: 70px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
     display: block;
     margin: 0 auto;
 }
@@ -81,6 +81,7 @@ body {
     margin-bottom: 8px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     animation: fadeInUp 0.8s ease-out 0.2s both;
+    color: #d4af37;
 }
 
 .header-subtitle {
@@ -89,7 +90,7 @@ body {
     font-weight: 500;
     letter-spacing: 6px;
     text-transform: uppercase;
-    color: #b0c4de;
+    color: #b8cce0;
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
@@ -108,7 +109,7 @@ body {
 
 .intro-text p {
     font-size: 16px;
-    color: #b0c4de;
+    color: #b8cce0;
     line-height: 1.6;
 }
 
@@ -123,8 +124,8 @@ body {
 
 /* Category Card */
 .category-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
-    border: 3px solid #25d366;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(245, 245, 245, 0.97) 100%);
+    border: 3px solid #d4af37;
     border-radius: 16px;
     padding: 25px 20px;
     text-align: center;
@@ -148,7 +149,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
     transition: left 0.5s ease;
 }
 
@@ -159,18 +160,18 @@ body {
 .category-card:hover,
 .category-card:focus {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.3);
-    border-color: #1da857;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+    border-color: #c9a961;
 }
 
 .category-card:active {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
 }
 
 .card-icon {
     font-size: 48px;
-    color: #25d366;
+    color: #0d47a1;
     margin-bottom: 15px;
     animation: scaleIn 0.6s ease-out;
 }
@@ -178,14 +179,14 @@ body {
 .category-card h3 {
     font-size: 18px;
     font-weight: 700;
-    color: #001a4d;
+    color: #1a3a52;
     margin-bottom: 10px;
     line-height: 1.2;
 }
 
 .category-card p {
     font-size: 13px;
-    color: #666666;
+    color: #555555;
     line-height: 1.5;
     flex-grow: 1;
 }
@@ -230,7 +231,7 @@ body {
 }
 
 .modal-header {
-    background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
+    background: linear-gradient(135deg, #1a3a52 0%, #0d47a1 100%);
     color: white;
     padding: 20px;
     position: relative;
@@ -238,6 +239,7 @@ body {
     font-family: 'Libre Baskerville', serif;
     font-size: 20px;
     margin: 0;
+    border-bottom: 3px solid #d4af37;
 }
 
 .modal-header h2 {
@@ -249,7 +251,7 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(212, 175, 55, 0.2);
     border: none;
     color: white;
     font-size: 24px;
@@ -264,7 +266,8 @@ body {
 }
 
 .modal-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(212, 175, 55, 0.4);
+    transform: rotate(90deg);
 }
 
 .modal-content {
@@ -275,10 +278,12 @@ body {
 }
 
 .modal-content h3 {
-    color: #001a4d;
+    color: #0d47a1;
     font-size: 16px;
     margin-bottom: 12px;
     margin-top: 15px;
+    border-left: 3px solid #d4af37;
+    padding-left: 12px;
 }
 
 .modal-content h3:first-child {
@@ -289,7 +294,7 @@ body {
 .modal-content li {
     font-size: 14px;
     line-height: 1.6;
-    color: #666666;
+    color: #555555;
     margin-bottom: 10px;
 }
 
@@ -315,7 +320,7 @@ body {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    background: linear-gradient(135deg, #25d366 0%, #1da857 100%);
+    background: linear-gradient(135deg, #0d47a1 0%, #1a3a52 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -324,11 +329,13 @@ body {
     transition: all 0.3s ease;
     min-height: 44px;
     width: 100%;
+    border: 2px solid #d4af37;
 }
 
 .btn-contact:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #1a3a52 0%, #0d47a1 100%);
 }
 
 .btn-contact:active {
@@ -363,8 +370,9 @@ body {
 }
 
 .social-icon.instagram {
-    background-color: #e1306c;
-    color: #ffffff;
+    background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+    color: #1a3a52;
+    font-weight: 700;
 }
 
 .social-icon.instagram:active {
@@ -373,12 +381,13 @@ body {
 
 .social-icon.instagram:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
 }
 
 .social-icon.whatsapp {
-    background-color: #25d366;
-    color: #ffffff;
+    background: linear-gradient(135deg, #0d47a1 0%, #1a3a52 100%);
+    color: #d4af37;
+    font-weight: 700;
 }
 
 .social-icon.whatsapp:active {
@@ -387,7 +396,7 @@ body {
 
 .social-icon.whatsapp:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 5px 15px rgba(13, 71, 161, 0.5);
 }
 
 /* Branding */
@@ -399,7 +408,7 @@ body {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #d4af37;
     line-height: 1.2;
     z-index: 10;
 }
