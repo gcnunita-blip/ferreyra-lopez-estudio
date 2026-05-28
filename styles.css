@@ -219,13 +219,13 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(0.95); /* Fix de hardware 3D para evitar texto borroso */
-    backface-visibility: hidden; /* Fix para evitar texto borroso */
+    transform: translate3d(-50%, -50%, 0) scale(0.95);
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes */
+    -webkit-font-smoothing: antialiased;
     background: linear-gradient(135deg, rgba(35, 35, 35, 0.95) 0%, rgba(15, 15, 15, 0.98) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(212, 175, 55, 0.2); /* Borde sutil dorado */
     border-radius: 20px;
     z-index: 1000;
