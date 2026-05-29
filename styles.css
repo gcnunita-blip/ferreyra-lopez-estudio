@@ -63,9 +63,17 @@ body {
 }
 
 .logo {
-    height: 60px;
+    height: 100px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+
+    display: block;
+    margin: 0 auto;
+}
+
+.logo2 {
+    height: 33px;
+    width: auto;
+
     display: block;
     margin: 0 auto;
 }
@@ -78,9 +86,74 @@ body {
     margin-top: 5px;
     margin-bottom: 2px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-    color: #d4af37;
     line-height: 1.1;
+    
+    /* --- Nuevo efecto de destello --- */
+    background: linear-gradient(
+        110deg,
+        #d4af37 0%,
+        #d4af37 40%,
+        #fffbe6 50%, /* Un blanco dorado muy brillante para el reflejo */
+        #d4af37 60%,
+        #d4af37 100%
+    );
+    background-size: 200% auto;
+    color: transparent; /* Hace que el texto sea transparente para mostrar el degradado de fondo */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Combina la animación de aparición existente (fadeInUp) con el destello continuo */
+    animation: fadeInUp 0.8s ease-out 0.2s both, destello 4s ease-in-out 1s infinite alternate;
+}
+
+/* Keyframes para el recorrido del destello */
+@keyframes destello {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}
+.wrapper {
+ font-family: 'Libre Baskerville', serif;
+  
+  display: grid;
+  grid-template-areas: 'overlap';
+  place-content: center;
+  text-transform: uppercase;
+}
+.wrapper > div {
+  background-clip: text;  
+  -webkit-background-clip: text;
+  color: #363833;
+  font-size: clamp( 1em, 3vw, 3rem);
+  grid-area: overlap;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 3px transparent;
+}
+div.bg {
+  background-image: repeating-linear-gradient( 105deg, 
+    var(--gold) 0% , 
+    var(--dark-shadow) 5%,
+    var(--gold) 22%);
+  color: transparent;
+  filter: drop-shadow(5px 5px 5px black);
+  transform: scaleY(1.06);
+  transform-origin: top;
+}
+div.fg{
+  background-image: repeating-linear-gradient( 5deg,  
+    var(--gold) 0% , 
+    var(--light-shadow) 25%, 
+    var(--gold) 55%);
+  color: #1e2127;
+  transform: scale(1);
 }
 
 .header-subtitle {
@@ -217,16 +290,19 @@ body {
 .modal {
     display: none; 
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0) scale(0.95);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
+    /* Nuevo método de centrado libre de blur */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content; 
+    
+    -webkit-font-smoothing: antialiased; 
     background: linear-gradient(135deg, rgba(35, 35, 35, 0.95) 0%, rgba(15, 15, 15, 0.98) 100%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(212, 175, 55, 0.2); /* Borde sutil dorado */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2); 
     border-radius: 20px;
     z-index: 1000;
     max-width: 90vw;
@@ -237,7 +313,6 @@ body {
     overflow: hidden;
     flex-direction: column;
 }
-
 .modal.active {
     display: flex; 
 }
@@ -490,8 +565,14 @@ body {
     to { opacity: 1; }
 }
 @keyframes slideUp {
-    from { opacity: 0; transform: translate3d(-50%, -40%, 0); }
-    to { opacity: 1; transform: translate3d(-50%, -50%, 0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.96); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
 }
 @keyframes scaleIn {
     from { transform: scale(0.5); opacity: 0; }
