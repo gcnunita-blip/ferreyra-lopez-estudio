@@ -51,7 +51,11 @@ body {
 .header {
     text-align: center;
     padding: 15px 20px 0px 20px;
-    margin-bottom: 22px; 
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container {
@@ -122,38 +126,38 @@ body {
 }
 .wrapper {
  font-family: 'Libre Baskerville', serif;
-  
-  display: grid;
-  grid-template-areas: 'overlap';
-  place-content: center;
-  text-transform: uppercase;
+   
+   display: grid;
+   grid-template-areas: 'overlap';
+   place-content: center;
+   text-transform: uppercase;
 }
 .wrapper > div {
-  background-clip: text;  
-  -webkit-background-clip: text;
-  color: #363833;
-  font-size: clamp( 1em, 3vw, 3rem);
-  grid-area: overlap;
-  letter-spacing: 1px;
-  -webkit-text-stroke: 3px transparent;
+   background-clip: text;  
+   -webkit-background-clip: text;
+   color: #363833;
+   font-size: clamp( 1em, 3vw, 3rem);
+   grid-area: overlap;
+   letter-spacing: 1px;
+   -webkit-text-stroke: 3px transparent;
 }
 div.bg {
-  background-image: repeating-linear-gradient( 105deg, 
-    var(--gold) 0% , 
-    var(--dark-shadow) 5%,
-    var(--gold) 22%);
-  color: transparent;
-  filter: drop-shadow(5px 5px 5px black);
-  transform: scaleY(1.06);
-  transform-origin: top;
+   background-image: repeating-linear-gradient( 105deg, 
+     var(--gold) 0% , 
+     var(--dark-shadow) 5%,
+     var(--gold) 22%);
+   color: transparent;
+   filter: drop-shadow(5px 5px 5px black);
+   transform: scaleY(1.06);
+   transform-origin: top;
 }
 div.fg{
-  background-image: repeating-linear-gradient( 5deg,  
-    var(--gold) 0% , 
-    var(--light-shadow) 25%, 
-    var(--gold) 55%);
-  color: #1e2127;
-  transform: scale(1);
+   background-image: repeating-linear-gradient( 5deg,  
+     var(--gold) 0% , 
+     var(--light-shadow) 25%, 
+     var(--gold) 55%);
+   color: #1e2127;
+   transform: scale(1);
 }
 
 .header-subtitle {
@@ -178,6 +182,10 @@ div.fg{
     text-align: center;
     margin-bottom: 15px;
     animation: fadeInUp 0.8s ease-out 0.6s both;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilos de la nueva Propuesta de Valor Comercial */
@@ -584,9 +592,12 @@ div.fg{
    ========================================================================== */
 
 .hero-buttons-single {
+    width: 100%;
     max-width: 380px; 
     margin: 0 auto 10px auto; 
     animation: fadeInUp 0.8s ease-out 0.6s both;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-btn-single {
@@ -598,7 +609,6 @@ div.fg{
     border-radius: 14px;
     padding: 10px 19px; 
     text-decoration: none;
-	margin: 0 auto; /* Esta es la línea que centra el botón */
     color: #ffffff;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -723,8 +733,8 @@ div.fg{
 .section-divider-text::after { left: 100%; margin-left: 15px; }
 
 /* ==========================================================================
-   INSTAGRAM FOOTER BANNER
-   ========================================================================== */
+    INSTAGRAM FOOTER BANNER
+    ========================================================================== */
 
 .instagram-footer-container {
     margin-top: 0px;
